@@ -7,25 +7,33 @@
 
 import SwiftUI
 
-struct CollectionCard: View {
+struct CollectionCardView: View {
     let collection: Collection
-
+    let onCollectionTap: (Collection) -> ()
+    
     var body: some View {
-        ZStack(alignment: .center) {
+        let _ = Self._printChanges()
+        HStack(alignment: .center) {
             Text(collection.name)
                 .foregroundStyle(collection.nameColor)
                 .padding(.horizontal, .md)
                 .padding(.vertical, .xl)
+            Spacer()
+            Image(systemName: "chevron.right")
+                .foregroundStyle(collection.nameColor)
         }
+        .padding(.horizontal, .md)
         .frame(maxWidth: .infinity)
         .background(collection.color)
         .clipShape(
             RoundedRectangle(cornerRadius: .md)
         )
-        .padding(.horizontal, .md)
+        .onTapGesture { onCollectionTap(collection) }
     }
 }
 
 #Preview {
-    CollectionCard(collection: .romanceDawn)
+    CollectionCardView(collection: .romanceDawn) { collection in
+        print(collection)
+    }
 }

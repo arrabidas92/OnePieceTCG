@@ -8,7 +8,7 @@
 import Foundation
 
 extension CGFloat {
-    static let xs = 8.0
+    static let xs = 4.0
     static let sm = 8.0
     static let md = 16.0
     static let xl = 24.0

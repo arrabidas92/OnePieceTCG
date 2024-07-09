@@ -26,6 +26,15 @@ extension Collection {
         }
     }
     
+    var shortName: String {
+        switch self {
+        case .romanceDawn:
+            return "OP01"
+        case .paramountWar:
+            return "OP02"
+        }
+    }
+    
     var nameColor: Color {
         switch self {
         case .romanceDawn, .paramountWar:
@@ -39,6 +48,22 @@ extension Collection {
             return Color.romanceDawn
         case .paramountWar:
             return Color.paramountWar
+        }
+    }
+    
+    var releaseDate: String {
+        switch self {
+        case .romanceDawn:
+            return "02/12/2022"
+        case .paramountWar:
+            return "10/03/2023"
+        }
+    }
+    
+    var totalOfCards: String {
+        switch self {
+        case .romanceDawn, .paramountWar:
+            return "154 CARTES"
         }
     }
 }
