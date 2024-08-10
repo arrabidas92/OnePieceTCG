@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCeEcH_1Jj4Q4N4TZfuTi7Ica2aGAuNvdQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>414777441731</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.oway.app.OnePieceTCG</string>
+	<key>PROJECT_ID</key>
+	<string>onepiecetcg-d6e58</string>
+	<key>STORAGE_BUCKET</key>
+	<string>onepiecetcg-d6e58.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:414777441731:ios:a9b8c8882850f35521d176</string>
+</dict>
+</plist>
