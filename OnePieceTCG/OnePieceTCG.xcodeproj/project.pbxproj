@@ -18,6 +18,8 @@
 		B4E0BEAD2C3D718D00E7CFD3 /* MetricType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0BEAC2C3D718D00E7CFD3 /* MetricType.swift */; };
 		B4E0BEAF2C3D77E200E7CFD3 /* MetricsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0BEAE2C3D77E200E7CFD3 /* MetricsHeaderView.swift */; };
 		B4E0BEB12C3D7D0000E7CFD3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0BEB02C3D7D0000E7CFD3 /* CardView.swift */; };
+		B4EA62D22C78906900890DB0 /* String+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA62D12C78906900890DB0 /* String+EXT.swift */; };
+		B4EA62D52C7895FE00890DB0 /* ReleaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA62D42C7895FE00890DB0 /* ReleaseViewModel.swift */; };
 		B4EE873E2C67B1F200201C7A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4EE873D2C67B1F100201C7A /* GoogleService-Info.plist */; };
 		B4EE87412C67B28E00201C7A /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = B4EE87402C67B28E00201C7A /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		B4EE87432C67B28E00201C7A /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = B4EE87422C67B28E00201C7A /* FirebaseAppCheck */; };
@@ -59,6 +61,8 @@
 		B4E0BEAC2C3D718D00E7CFD3 /* MetricType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricType.swift; sourceTree = "<group>"; };
 		B4E0BEAE2C3D77E200E7CFD3 /* MetricsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsHeaderView.swift; sourceTree = "<group>"; };
 		B4E0BEB02C3D7D0000E7CFD3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		B4EA62D12C78906900890DB0 /* String+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+EXT.swift"; sourceTree = "<group>"; };
+		B4EA62D42C7895FE00890DB0 /* ReleaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseViewModel.swift; sourceTree = "<group>"; };
 		B4EE873D2C67B1F100201C7A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B4F680B32C3C421900BB425A /* CollectionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCardView.swift; sourceTree = "<group>"; };
 		B4F680B52C3C4BC600BB425A /* ListCollectionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionCardView.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 				B4E0BEA12C3D6AB000E7CFD3 /* CollectionDetails */,
 				B4E0BE972C3D674400E7CFD3 /* Navigation */,
 				B4F680BA2C3C4C1800BB425A /* DesignSystem */,
+				B4EA62D02C78905A00890DB0 /* Extensions */,
 				B43936632C0A125B00A59DCC /* Assets.xcassets */,
 				B4EE873D2C67B1F100201C7A /* GoogleService-Info.plist */,
 			);
@@ -159,6 +164,7 @@
 			children = (
 				B4F680B52C3C4BC600BB425A /* ListCollectionCardView.swift */,
 				B4F680B32C3C421900BB425A /* CollectionCardView.swift */,
+				B4EA62D32C7895E800890DB0 /* ViewModel */,
 				B4E0BE9E2C3D699E00E7CFD3 /* Model */,
 			);
 			path = Views;
@@ -215,6 +221,22 @@
 				B4E0BEAC2C3D718D00E7CFD3 /* MetricType.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B4EA62D02C78905A00890DB0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B4EA62D12C78906900890DB0 /* String+EXT.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B4EA62D32C7895E800890DB0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B4EA62D42C7895FE00890DB0 /* ReleaseViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B4F680B22C3C41CC00BB425A /* Collections */ = {
@@ -333,9 +355,11 @@
 				B4F680BC2C3C4C2800BB425A /* CGFloat+EXT.swift in Sources */,
 				B4F680B42C3C421900BB425A /* CollectionCardView.swift in Sources */,
 				B43936602C0A125900A59DCC /* OnePieceTCGApp.swift in Sources */,
+				B4EA62D52C7895FE00890DB0 /* ReleaseViewModel.swift in Sources */,
 				B4E0BEA42C3D6AD700E7CFD3 /* CollectionDetailsView.swift in Sources */,
 				B4E0BEA82C3D6F1300E7CFD3 /* MetricView.swift in Sources */,
 				B4E0BEAF2C3D77E200E7CFD3 /* MetricsHeaderView.swift in Sources */,
+				B4EA62D22C78906900890DB0 /* String+EXT.swift in Sources */,
 				B4F680B62C3C4BC600BB425A /* ListCollectionCardView.swift in Sources */,
 				B4E0BEB12C3D7D0000E7CFD3 /* CardView.swift in Sources */,
 				B4E0BEAD2C3D718D00E7CFD3 /* MetricType.swift in Sources */,
@@ -479,6 +503,7 @@
 				DEVELOPMENT_TEAM = 43955M7DU9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -509,6 +534,7 @@
 				DEVELOPMENT_TEAM = 43955M7DU9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

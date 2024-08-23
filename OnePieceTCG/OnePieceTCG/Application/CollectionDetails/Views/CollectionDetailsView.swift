@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CollectionDetailsView: View {
-    let collection: Collection
+    let release: Release
     
     let columns = [
         GridItem(.flexible()),
@@ -18,19 +18,19 @@ struct CollectionDetailsView: View {
     var body: some View {
         let _ = Self._printChanges()
         ScrollView {
-            MetricsHeaderView(collection: collection)
-                .padding(.horizontal, .md)
-                .navigationTitle(collection.shortName)
-            LazyVGrid(columns: columns, spacing: .sm) {
-                CardView()
-                CardView()
-            }
-            .padding(.vertical, .sm)
-            .padding(.horizontal, .md)
+//            MetricsHeaderView(collection: collection)
+//                .padding(.horizontal, .md)
+//                .navigationTitle(collection.shortName)
+//            LazyVGrid(columns: columns, spacing: .sm) {
+//                CardView()
+//                CardView()
+//            }
+//            .padding(.vertical, .sm)
+//            .padding(.horizontal, .md)
         }
     }
 }
 
-#Preview {
-    CollectionDetailsView(collection: .romanceDawn)
-}
+//#Preview {
+//    CollectionDetailsView(collection: .romanceDawn)
+//}

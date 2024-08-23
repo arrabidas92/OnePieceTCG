@@ -8,32 +8,43 @@
 import SwiftUI
 
 struct CollectionCardView: View {
-    let collection: Collection
-    let onCollectionTap: (Collection) -> ()
+    let release: Release
+    let onCollectionTap: (Release) -> ()
     
     var body: some View {
         let _ = Self._printChanges()
         HStack(alignment: .center) {
-            Text(collection.name)
-                .foregroundStyle(collection.nameColor)
+            Text(release.name)
+                .foregroundStyle(
+                    release.nameColor.colorAsset
+                )
                 .padding(.horizontal, .md)
                 .padding(.vertical, .xl)
             Spacer()
             Image(systemName: "chevron.right")
-                .foregroundStyle(collection.nameColor)
+                .foregroundStyle(
+                    release.nameColor.colorAsset
+                )
         }
         .padding(.horizontal, .md)
         .frame(maxWidth: .infinity)
-        .background(collection.color)
+        .background(release.color.colorAsset)
         .clipShape(
             RoundedRectangle(cornerRadius: .md)
         )
-        .onTapGesture { onCollectionTap(collection) }
+        .onTapGesture { onCollectionTap(release) }
     }
 }
 
 #Preview {
-    CollectionCardView(collection: .romanceDawn) { collection in
-        print(collection)
-    }
+    CollectionCardView(
+        release: .init(
+            id: "OP01",
+            name: "OP01 - Romance Dawn",
+            color: "romanceDawn",
+            nameColor: "white",
+            releaseDate: Date(),
+            totalOfCards: 154
+        )
+    ) { print($0) }
 }

@@ -37,8 +37,9 @@ struct OnePieceTCGApp: App {
     @ViewBuilder
     private func navigate(to route: Route) -> some View {
         switch route {
-        case .collectionDetails(let collection):
-            CollectionDetailsView(collection: collection)
+        case .releaseDetails(let release):
+            EmptyView()
+            //CollectionDetailsView(collection: collection)
         }
     }
 }
