@@ -10,6 +10,13 @@
 		B43936602C0A125900A59DCC /* OnePieceTCGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439365F2C0A125900A59DCC /* OnePieceTCGApp.swift */; };
 		B43936642C0A125B00A59DCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43936632C0A125B00A59DCC /* Assets.xcassets */; };
 		B43936672C0A125B00A59DCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43936662C0A125B00A59DCC /* Preview Assets.xcassets */; };
+		B444F1E62C889F540053C61F /* AnyRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B444F1E52C889F540053C61F /* AnyRequestService.swift */; };
+		B444F1E92C889F800053C61F /* ReleaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B444F1E82C889F800053C61F /* ReleaseRepository.swift */; };
+		B444F1EC2C889FA10053C61F /* DocumentTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B444F1EB2C889FA10053C61F /* DocumentTarget.swift */; };
+		B444F1EE2C889FB70053C61F /* ReleaseTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B444F1ED2C889FB70053C61F /* ReleaseTarget.swift */; };
+		B444F1F12C889FF60053C61F /* RequestServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B444F1F02C889FF60053C61F /* RequestServiceError.swift */; };
+		B444F1F52C88A01F0053C61F /* FirestoreRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B444F1F42C88A01F0053C61F /* FirestoreRequestService.swift */; };
+		B444F1F82C88A5A60053C61F /* ReleaseRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B444F1F72C88A5A60053C61F /* ReleaseRepositoryImpl.swift */; };
 		B4E0BE992C3D675800E7CFD3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0BE982C3D675800E7CFD3 /* Router.swift */; };
 		B4E0BE9B2C3D678800E7CFD3 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0BE9A2C3D678800E7CFD3 /* Route.swift */; };
 		B4E0BEA42C3D6AD700E7CFD3 /* CollectionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0BEA32C3D6AD700E7CFD3 /* CollectionDetailsView.swift */; };
@@ -53,6 +60,13 @@
 		B439365F2C0A125900A59DCC /* OnePieceTCGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePieceTCGApp.swift; sourceTree = "<group>"; };
 		B43936632C0A125B00A59DCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B43936662C0A125B00A59DCC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B444F1E52C889F540053C61F /* AnyRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyRequestService.swift; sourceTree = "<group>"; };
+		B444F1E82C889F800053C61F /* ReleaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseRepository.swift; sourceTree = "<group>"; };
+		B444F1EB2C889FA10053C61F /* DocumentTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTarget.swift; sourceTree = "<group>"; };
+		B444F1ED2C889FB70053C61F /* ReleaseTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseTarget.swift; sourceTree = "<group>"; };
+		B444F1F02C889FF60053C61F /* RequestServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServiceError.swift; sourceTree = "<group>"; };
+		B444F1F42C88A01F0053C61F /* FirestoreRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRequestService.swift; sourceTree = "<group>"; };
+		B444F1F72C88A5A60053C61F /* ReleaseRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseRepositoryImpl.swift; sourceTree = "<group>"; };
 		B4E0BE982C3D675800E7CFD3 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B4E0BE9A2C3D678800E7CFD3 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		B4E0BEA32C3D6AD700E7CFD3 /* CollectionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsView.swift; sourceTree = "<group>"; };
@@ -141,6 +155,8 @@
 				B439365F2C0A125900A59DCC /* OnePieceTCGApp.swift */,
 				B4F680B22C3C41CC00BB425A /* Collections */,
 				B4E0BEA12C3D6AB000E7CFD3 /* CollectionDetails */,
+				B444F1F22C88A0080053C61F /* Data */,
+				B444F1E32C889F350053C61F /* Domain */,
 				B4E0BE972C3D674400E7CFD3 /* Navigation */,
 				B4F680BA2C3C4C1800BB425A /* DesignSystem */,
 				B4EA62D02C78905A00890DB0 /* Extensions */,
@@ -148,6 +164,75 @@
 				B4EE873D2C67B1F100201C7A /* GoogleService-Info.plist */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		B444F1E32C889F350053C61F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B444F1EA2C889F940053C61F /* Targets */,
+				B444F1E72C889F740053C61F /* Repositories */,
+				B444F1E42C889F480053C61F /* Services */,
+				B444F1EF2C889FE90053C61F /* Errors */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B444F1E42C889F480053C61F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B444F1E52C889F540053C61F /* AnyRequestService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B444F1E72C889F740053C61F /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				B444F1E82C889F800053C61F /* ReleaseRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		B444F1EA2C889F940053C61F /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				B444F1EB2C889FA10053C61F /* DocumentTarget.swift */,
+				B444F1ED2C889FB70053C61F /* ReleaseTarget.swift */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		B444F1EF2C889FE90053C61F /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				B444F1F02C889FF60053C61F /* RequestServiceError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		B444F1F22C88A0080053C61F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B444F1F62C88A0290053C61F /* Repositories */,
+				B444F1F32C88A0150053C61F /* Services */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B444F1F32C88A0150053C61F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B444F1F42C88A01F0053C61F /* FirestoreRequestService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B444F1F62C88A0290053C61F /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				B444F1F72C88A5A60053C61F /* ReleaseRepositoryImpl.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		B4E0BE972C3D674400E7CFD3 /* Navigation */ = {
@@ -353,17 +438,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4F680BC2C3C4C2800BB425A /* CGFloat+EXT.swift in Sources */,
+				B444F1EE2C889FB70053C61F /* ReleaseTarget.swift in Sources */,
+				B444F1EC2C889FA10053C61F /* DocumentTarget.swift in Sources */,
 				B4F680B42C3C421900BB425A /* CollectionCardView.swift in Sources */,
 				B43936602C0A125900A59DCC /* OnePieceTCGApp.swift in Sources */,
 				B4EA62D52C7895FE00890DB0 /* ReleaseViewModel.swift in Sources */,
+				B444F1E62C889F540053C61F /* AnyRequestService.swift in Sources */,
 				B4E0BEA42C3D6AD700E7CFD3 /* CollectionDetailsView.swift in Sources */,
 				B4E0BEA82C3D6F1300E7CFD3 /* MetricView.swift in Sources */,
+				B444F1F52C88A01F0053C61F /* FirestoreRequestService.swift in Sources */,
 				B4E0BEAF2C3D77E200E7CFD3 /* MetricsHeaderView.swift in Sources */,
 				B4EA62D22C78906900890DB0 /* String+EXT.swift in Sources */,
 				B4F680B62C3C4BC600BB425A /* ListCollectionCardView.swift in Sources */,
 				B4E0BEB12C3D7D0000E7CFD3 /* CardView.swift in Sources */,
+				B444F1E92C889F800053C61F /* ReleaseRepository.swift in Sources */,
 				B4E0BEAD2C3D718D00E7CFD3 /* MetricType.swift in Sources */,
 				B4E0BE992C3D675800E7CFD3 /* Router.swift in Sources */,
+				B444F1F82C88A5A60053C61F /* ReleaseRepositoryImpl.swift in Sources */,
+				B444F1F12C889FF60053C61F /* RequestServiceError.swift in Sources */,
 				B4E0BEAB2C3D6F2800E7CFD3 /* Metric.swift in Sources */,
 				B4E0BE9B2C3D678800E7CFD3 /* Route.swift in Sources */,
 				B4F680B92C3C4BF500BB425A /* Collection.swift in Sources */,

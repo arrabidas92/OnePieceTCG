@@ -10,27 +10,27 @@ import FirebaseFirestore
 
 struct ListCollectionCardView: View {
     @Environment(RouterImpl.self) private var router
-    @FirestoreQuery(collectionPath: "releases") private var releases: Result<[Release], Error>
+    @State private var vm = ReleaseViewModel()
     
     var body: some View {
         let _ = Self._printChanges()
         List {
-            if case let .success(releases) = releases {
-                ForEach(releases) { release in
-                    CollectionCardView(release: release) { release in
-                        router.navigate(to: .releaseDetails(release))
-                    }
-                    .listRowInsets(
-                        .init(
-                            top: .xs,
-                            leading: .md,
-                            bottom: .xs,
-                            trailing: .md
-                        )
-                    )
+            ForEach(vm.releases) { release in
+                CollectionCardView(release: release) { release in
+                    router.navigate(to: .releaseDetails(release))
                 }
+                .id(release.id)
+                .listRowInsets(
+                    .init(
+                        top: .xs,
+                        leading: .md,
+                        bottom: .xs,
+                        trailing: .md
+                    )
+                )
             }
         }
+        .task { await vm.getReleases() }
         .scrollContentBackground(.hidden)
         .listStyle(
             PlainListStyle()

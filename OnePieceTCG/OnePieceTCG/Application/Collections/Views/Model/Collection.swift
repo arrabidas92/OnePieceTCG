@@ -7,8 +7,8 @@
 
 import FirebaseFirestore
 
-struct Release: Codable, Identifiable, Hashable {
-    @DocumentID var id: String?
+public struct Release: Codable, Identifiable, Hashable {
+    @DocumentID public var id: String?
     let name: String
     let color: String
     let nameColor: String
