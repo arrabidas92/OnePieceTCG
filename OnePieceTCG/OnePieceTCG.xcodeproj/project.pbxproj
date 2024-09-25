@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4389C052CA47D3D00A3BEE7 /* Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4389C042CA47D3D00A3BEE7 /* Shimmering.swift */; };
 		B43936602C0A125900A59DCC /* OnePieceTCGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439365F2C0A125900A59DCC /* OnePieceTCGApp.swift */; };
 		B43936642C0A125B00A59DCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43936632C0A125B00A59DCC /* Assets.xcassets */; };
 		B43936672C0A125B00A59DCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43936662C0A125B00A59DCC /* Preview Assets.xcassets */; };
@@ -17,6 +18,7 @@
 		B444F1F12C889FF60053C61F /* RequestServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B444F1F02C889FF60053C61F /* RequestServiceError.swift */; };
 		B444F1F52C88A01F0053C61F /* FirestoreRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B444F1F42C88A01F0053C61F /* FirestoreRequestService.swift */; };
 		B444F1F82C88A5A60053C61F /* ReleaseRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B444F1F72C88A5A60053C61F /* ReleaseRepositoryImpl.swift */; };
+		B4CE2E4E2CA1CD0F00D960D1 /* View+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE2E4D2CA1CD0F00D960D1 /* View+EXT.swift */; };
 		B4E0BE992C3D675800E7CFD3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0BE982C3D675800E7CFD3 /* Router.swift */; };
 		B4E0BE9B2C3D678800E7CFD3 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0BE9A2C3D678800E7CFD3 /* Route.swift */; };
 		B4E0BEA42C3D6AD700E7CFD3 /* CollectionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0BEA32C3D6AD700E7CFD3 /* CollectionDetailsView.swift */; };
@@ -56,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4389C042CA47D3D00A3BEE7 /* Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmering.swift; sourceTree = "<group>"; };
 		B439365C2C0A125900A59DCC /* OnePieceTCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnePieceTCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B439365F2C0A125900A59DCC /* OnePieceTCGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePieceTCGApp.swift; sourceTree = "<group>"; };
 		B43936632C0A125B00A59DCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 		B444F1F02C889FF60053C61F /* RequestServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServiceError.swift; sourceTree = "<group>"; };
 		B444F1F42C88A01F0053C61F /* FirestoreRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRequestService.swift; sourceTree = "<group>"; };
 		B444F1F72C88A5A60053C61F /* ReleaseRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseRepositoryImpl.swift; sourceTree = "<group>"; };
+		B4CE2E4D2CA1CD0F00D960D1 /* View+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+EXT.swift"; sourceTree = "<group>"; };
 		B4E0BE982C3D675800E7CFD3 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B4E0BE9A2C3D678800E7CFD3 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		B4E0BEA32C3D6AD700E7CFD3 /* CollectionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsView.swift; sourceTree = "<group>"; };
@@ -336,6 +340,8 @@
 			isa = PBXGroup;
 			children = (
 				B4F680BB2C3C4C2800BB425A /* CGFloat+EXT.swift */,
+				B4CE2E4D2CA1CD0F00D960D1 /* View+EXT.swift */,
+				B4389C042CA47D3D00A3BEE7 /* Shimmering.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -449,7 +455,9 @@
 				B444F1F52C88A01F0053C61F /* FirestoreRequestService.swift in Sources */,
 				B4E0BEAF2C3D77E200E7CFD3 /* MetricsHeaderView.swift in Sources */,
 				B4EA62D22C78906900890DB0 /* String+EXT.swift in Sources */,
+				B4CE2E4E2CA1CD0F00D960D1 /* View+EXT.swift in Sources */,
 				B4F680B62C3C4BC600BB425A /* ListCollectionCardView.swift in Sources */,
+				B4389C052CA47D3D00A3BEE7 /* Shimmering.swift in Sources */,
 				B4E0BEB12C3D7D0000E7CFD3 /* CardView.swift in Sources */,
 				B444F1E92C889F800053C61F /* ReleaseRepository.swift in Sources */,
 				B4E0BEAD2C3D718D00E7CFD3 /* MetricType.swift in Sources */,

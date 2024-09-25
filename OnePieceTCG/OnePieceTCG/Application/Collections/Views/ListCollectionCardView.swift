@@ -14,27 +14,29 @@ struct ListCollectionCardView: View {
     
     var body: some View {
         let _ = Self._printChanges()
-        List {
-            ForEach(vm.releases) { release in
-                CollectionCardView(release: release) { release in
-                    router.navigate(to: .releaseDetails(release))
-                }
-                .id(release.id)
-                .listRowInsets(
-                    .init(
-                        top: .xs,
-                        leading: .md,
-                        bottom: .xs,
-                        trailing: .md
+        
+        ScrollView {
+            LazyVStack(alignment: .leading) {
+                ForEach(vm.releases) { release in
+                    CollectionCardView(
+                        release: release,
+                        isLoading: vm.isLoading
+                    ) { release in
+                        router.navigate(to: .releaseDetails(release))
+                    }
+                    .id(release.id)
+                    .padding(
+                        .init(
+                            top: .xs,
+                            leading: .md,
+                            bottom: .xs,
+                            trailing: .md
+                        )
                     )
-                )
+                }
             }
         }
         .task { await vm.getReleases() }
-        .scrollContentBackground(.hidden)
-        .listStyle(
-            PlainListStyle()
-        )
         .navigationTitle("Collections")
         .navigationBarTitleDisplayMode(.inline)
     }

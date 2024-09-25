@@ -9,7 +9,10 @@ import SwiftUI
 
 struct CollectionCardView: View {
     let release: Release
+    let isLoading: Bool
     let onCollectionTap: (Release) -> ()
+    
+    private let clippedShape = RoundedRectangle(cornerRadius: .md)
     
     var body: some View {
         let _ = Self._printChanges()
@@ -29,8 +32,10 @@ struct CollectionCardView: View {
         .padding(.horizontal, .md)
         .frame(maxWidth: .infinity)
         .background(release.color.colorAsset)
-        .clipShape(
-            RoundedRectangle(cornerRadius: .md)
+        .clipShape(clippedShape)
+        .skeleton(
+            clippedShape,
+            isLoading: isLoading
         )
         .onTapGesture { onCollectionTap(release) }
     }
@@ -45,6 +50,7 @@ struct CollectionCardView: View {
             nameColor: "white",
             releaseDate: Date(),
             totalOfCards: 154
-        )
+        ),
+        isLoading: false
     ) { print($0) }
 }

@@ -9,16 +9,21 @@ import SwiftUI
 import FirebaseFirestore
 
 @Observable class ReleaseViewModel {
-    var releases: [Release] = []
+    var releases: [Release]
+    var isLoading: Bool
     
     private let repository: ReleaseRepository
     
     init(repository: ReleaseRepository = ReleaseRepositoryImpl(service: .init())) {
         self.repository = repository
+        self.releases = []
+        self.isLoading = true
     }
     
     func getReleases() async {
         let result = await repository.getReleases()
+        isLoading = false
+        
         switch result {
         case .success(let releases):
             self.releases = releases
