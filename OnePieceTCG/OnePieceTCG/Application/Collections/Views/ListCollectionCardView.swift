@@ -16,24 +16,42 @@ struct ListCollectionCardView: View {
         let _ = Self._printChanges()
         
         ScrollView {
-            LazyVStack(alignment: .leading) {
-                ForEach(vm.releases) { release in
-                    CollectionCardView(
-                        release: release,
-                        isLoading: vm.isLoading
-                    ) { release in
-                        router.navigate(to: .releaseDetails(release))
-                    }
-                    .id(release.id)
-                    .padding(
-                        .init(
-                            top: .xs,
-                            leading: .md,
-                            bottom: .xs,
-                            trailing: .md
+            switch vm.result {
+            case .success(let releases):
+                LazyVStack(alignment: .leading) {
+                    ForEach(releases) { release in
+                        CollectionCardView(
+                            release: release,
+                            isLoading: false
+                        ) { release in
+                            router.navigate(to: .releaseDetails(release))
+                        }
+                        .id(release.id)
+                        .padding(
+                            .init(
+                                top: .xs,
+                                leading: .md,
+                                bottom: .xs,
+                                trailing: .md
+                            )
                         )
-                    )
+                    }
                 }
+            case .error(let e):
+                EmptyView()
+            case .loading:
+                //Add loading progress views to fit available screen count number divide by screen height and generate the views
+                GeometryReader { geometry in
+                    RoundedRectangle(cornerRadius: 16.0)
+                        .skeleton(
+                            RoundedRectangle(cornerRadius: .md),
+                            isLoading: true
+                        )
+                        .padding(.horizontal, .md)
+                        .frame(width: geometry.size.width, height: 64.0)
+                        .foregroundColor(.blue)
+                        
+                    }
             }
         }
         .task { await vm.getReleases() }

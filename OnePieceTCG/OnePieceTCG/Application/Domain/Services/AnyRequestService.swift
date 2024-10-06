@@ -9,6 +9,6 @@ import Foundation
 
 public protocol AnyRequestService {
     associatedtype T: DocumentTarget
-    func getSingle<Dto: Decodable>(target: T) async -> Result<Dto, Error>
-    func getAll<Dto: Decodable>(target: T) async -> Result<[Dto], Error>
+    func getSingle<Dto: Decodable>(target: T) async -> ResultState<Dto, Error>
+    func getAll<Dto: Decodable>(target: T) async -> ResultState<[Dto], Error>
 }

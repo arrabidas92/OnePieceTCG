@@ -253,8 +253,6 @@
 			children = (
 				B4F680B52C3C4BC600BB425A /* ListCollectionCardView.swift */,
 				B4F680B32C3C421900BB425A /* CollectionCardView.swift */,
-				B4EA62D32C7895E800890DB0 /* ViewModel */,
-				B4E0BE9E2C3D699E00E7CFD3 /* Model */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +330,8 @@
 			isa = PBXGroup;
 			children = (
 				B4E0BE9D2C3D699400E7CFD3 /* Views */,
+				B4EA62D32C7895E800890DB0 /* ViewModel */,
+				B4E0BE9E2C3D699E00E7CFD3 /* Model */,
 			);
 			path = Collections;
 			sourceTree = "<group>";

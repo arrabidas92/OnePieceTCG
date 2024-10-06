@@ -8,6 +8,6 @@
 import Foundation
 
 public protocol ReleaseRepository {
-    func getReleases() async -> Result<[Release], Error>
-    func getRelease(id: String) async -> Result<Release, Error>
+    func getReleases() async -> ResultState<[Release], Error>
+    func getRelease(id: String) async -> ResultState<Release, Error>
 }

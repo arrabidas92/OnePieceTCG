@@ -14,7 +14,7 @@ public struct FirestoreRequestService<T: DocumentTarget>: AnyRequestService {
         self.database = Firestore.firestore()
     }
     
-    public func getSingle<Dto>(target: T) async -> Result<Dto, Error> where Dto : Decodable {
+    public func getSingle<Dto>(target: T) async -> ResultState<Dto, Error> where Dto : Decodable {
         let databaseReference = database.collection(target.reference)
         
         do {
@@ -22,24 +22,24 @@ public struct FirestoreRequestService<T: DocumentTarget>: AnyRequestService {
             let data = try snapshot.documents.map { try $0.data(as: Dto.self) }
             
             if let data = data.first {
-                return Result.success(data)
+                return ResultState.success(data)
             } else {
                 throw RequestServiceError.noData
             }
         } catch let error {
-            return Result.failure(error)
+            return ResultState.error(error)
         }
     }
     
-    public func getAll<Dto>(target: T) async -> Result<[Dto], Error> where Dto : Decodable {
+    public func getAll<Dto>(target: T) async -> ResultState<[Dto], Error> where Dto : Decodable {
         let databaseReference =  database.collection(target.reference)
         
         do {
             let document = try await databaseReference.getDocuments()
             let data = try document.documents.map { try $0.data(as: Dto.self) }
-            return Result.success(data)
+            return ResultState.success(data)
         } catch let error {
-            return Result.failure(error)
+            return ResultState.error(error)
         }
     }
 }

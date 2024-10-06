@@ -14,11 +14,11 @@ public struct ReleaseRepositoryImpl: ReleaseRepository {
         self.service = service
     }
     
-    public func getReleases() async -> Result<[Release], Error> {
+    public func getReleases() async -> ResultState<[Release], Error> {
         return await service.getAll(target: .getReleases)
     }
     
-    public func getRelease(id: String) async -> Result<Release, Error> {
+    public func getRelease(id: String) async -> ResultState<Release, Error> {
         return await service.getSingle(target: .getRelease(id))
     }
 }
