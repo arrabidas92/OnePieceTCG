@@ -8,11 +8,7 @@
 import SwiftUI
 
 public extension View {
-    func skeleton<S>(
-        _ shape: S? = nil as Rectangle?,
-        isLoading: Bool
-    ) -> some View where S: Shape {
-        guard isLoading else { return AnyView(self) }
+    func skeleton<S>(_ shape: S? = nil as Rectangle?) -> some View where S: Shape {
         let skeletonColor = Color.gray.opacity(0.3)
         
         let skeletonShape: AnyShape = if let shape {

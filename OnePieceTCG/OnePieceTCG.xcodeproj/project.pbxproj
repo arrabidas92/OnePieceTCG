@@ -11,6 +11,9 @@
 		B43936602C0A125900A59DCC /* OnePieceTCGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439365F2C0A125900A59DCC /* OnePieceTCGApp.swift */; };
 		B43936642C0A125B00A59DCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43936632C0A125B00A59DCC /* Assets.xcassets */; };
 		B43936672C0A125B00A59DCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43936662C0A125B00A59DCC /* Preview Assets.xcassets */; };
+		B4446FD82CBAE8CD00213D17 /* ListReleasesProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4446FD72CBAE8CD00213D17 /* ListReleasesProgressView.swift */; };
+		B4446FDA2CBAE93000213D17 /* ListReleasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4446FD92CBAE93000213D17 /* ListReleasesView.swift */; };
+		B4446FDC2CBAE97F00213D17 /* ListReleasesErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4446FDB2CBAE97F00213D17 /* ListReleasesErrorView.swift */; };
 		B444F1E62C889F540053C61F /* AnyRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B444F1E52C889F540053C61F /* AnyRequestService.swift */; };
 		B444F1E92C889F800053C61F /* ReleaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B444F1E82C889F800053C61F /* ReleaseRepository.swift */; };
 		B444F1EC2C889FA10053C61F /* DocumentTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B444F1EB2C889FA10053C61F /* DocumentTarget.swift */; };
@@ -63,6 +66,9 @@
 		B439365F2C0A125900A59DCC /* OnePieceTCGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePieceTCGApp.swift; sourceTree = "<group>"; };
 		B43936632C0A125B00A59DCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B43936662C0A125B00A59DCC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B4446FD72CBAE8CD00213D17 /* ListReleasesProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReleasesProgressView.swift; sourceTree = "<group>"; };
+		B4446FD92CBAE93000213D17 /* ListReleasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReleasesView.swift; sourceTree = "<group>"; };
+		B4446FDB2CBAE97F00213D17 /* ListReleasesErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReleasesErrorView.swift; sourceTree = "<group>"; };
 		B444F1E52C889F540053C61F /* AnyRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyRequestService.swift; sourceTree = "<group>"; };
 		B444F1E82C889F800053C61F /* ReleaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseRepository.swift; sourceTree = "<group>"; };
 		B444F1EB2C889FA10053C61F /* DocumentTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTarget.swift; sourceTree = "<group>"; };
@@ -252,6 +258,9 @@
 			isa = PBXGroup;
 			children = (
 				B4F680B52C3C4BC600BB425A /* ListCollectionCardView.swift */,
+				B4446FD92CBAE93000213D17 /* ListReleasesView.swift */,
+				B4446FD72CBAE8CD00213D17 /* ListReleasesProgressView.swift */,
+				B4446FDB2CBAE97F00213D17 /* ListReleasesErrorView.swift */,
 				B4F680B32C3C421900BB425A /* CollectionCardView.swift */,
 			);
 			path = Views;
@@ -447,7 +456,9 @@
 				B444F1EE2C889FB70053C61F /* ReleaseTarget.swift in Sources */,
 				B444F1EC2C889FA10053C61F /* DocumentTarget.swift in Sources */,
 				B4F680B42C3C421900BB425A /* CollectionCardView.swift in Sources */,
+				B4446FD82CBAE8CD00213D17 /* ListReleasesProgressView.swift in Sources */,
 				B43936602C0A125900A59DCC /* OnePieceTCGApp.swift in Sources */,
+				B4446FDA2CBAE93000213D17 /* ListReleasesView.swift in Sources */,
 				B4EA62D52C7895FE00890DB0 /* ReleaseViewModel.swift in Sources */,
 				B444F1E62C889F540053C61F /* AnyRequestService.swift in Sources */,
 				B4E0BEA42C3D6AD700E7CFD3 /* CollectionDetailsView.swift in Sources */,
@@ -467,6 +478,7 @@
 				B4E0BEAB2C3D6F2800E7CFD3 /* Metric.swift in Sources */,
 				B4E0BE9B2C3D678800E7CFD3 /* Route.swift in Sources */,
 				B4F680B92C3C4BF500BB425A /* Collection.swift in Sources */,
+				B4446FDC2CBAE97F00213D17 /* ListReleasesErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

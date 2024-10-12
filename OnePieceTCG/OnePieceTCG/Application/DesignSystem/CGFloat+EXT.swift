@@ -13,4 +13,5 @@ extension CGFloat {
     static let md = 16.0
     static let xl = 24.0
     static let xxl = 32.0
+    static let xxxl = 64.0
 }
