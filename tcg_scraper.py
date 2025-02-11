@@ -3,11 +3,10 @@ from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 from airtable import Airtable
 
-# Configuration (move these to a separate config file or use environment variables)
 AIRTABLE_PAT = os.environ.get("AIRTABLE_PAT")
 AIRTABLE_BASE_ID = os.environ.get("AIRTABLE_BASE_ID")
 AIRTABLE_TABLE_NAME = os.environ.get("AIRTABLE_TABLE_NAME")
-SCRAPE_URL = "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/one-piece-card-game/price-guides/emperors-in-the-new-world"  # More descriptive name
+SCRAPE_URL = "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/one-piece-card-game/price-guides/emperors-in-the-new-world"
 
 if not all([AIRTABLE_PAT, AIRTABLE_BASE_ID, AIRTABLE_TABLE_NAME]):
     raise ValueError(
@@ -27,12 +26,16 @@ def scrape_card_data(url):
         html = page.content()
         browser.close()  # Close browser within the context manager
 
-    soup = BeautifulSoup(html, "lxml")  # Specify parser explicitly
-    # issue with Eustass "Captain" Kid I think we should remove the "characters"
-    names = [a.text.strip() for a in soup.find_all("a", class_="pdp-url")]
+    soup = BeautifulSoup(html, "lxml")
+    names = [a.text.strip().replace('"', ' ')
+             for a in soup.find_all("a", class_="pdp-url")]
     numbers = [td.text.strip() for td in soup.select("tr td:nth-child(7)")]
     prices = [td.text.strip() for td in soup.select("tr td:nth-child(8)")]
-    return names, numbers, prices
+    small_images = [img['src']
+                    for img in soup.find_all("img", class_="thumbnail")]
+    medium_images = [image.replace("200x200", "400x400")
+                     for image in small_images]
+    return names, numbers, prices, small_images, medium_images
 
 
 def insert_or_update_record(record_data, primary_key_field="id"):
@@ -59,9 +62,10 @@ def insert_or_update_record(record_data, primary_key_field="id"):
         print(f"Error inserting/updating record: {e}")
 
 
-def process_and_upload_data(names, numbers, prices):
+def process_and_upload_data(names, numbers, prices, small_images, medium_images):
     """Processes the scraped data and uploads it to Airtable."""
-    min_length = min(len(names), len(numbers), len(prices))
+    min_length = min(len(names), len(numbers), len(prices),
+                     len(small_images), len(medium_images))
     for i in range(min_length):
         number = numbers[i]
         if not number:
@@ -71,11 +75,15 @@ def process_and_upload_data(names, numbers, prices):
         try:
             name = names[i]
             price = prices[i]
+            small_image = small_images[i]
+            medium_image = medium_images[i]
 
             record_data = {
                 "id": name,
                 "number": number,
-                "price": price
+                "price": price,
+                "small_image": small_image,
+                "medium_image": medium_image
             }
             insert_or_update_record(record_data)
 
@@ -84,5 +92,7 @@ def process_and_upload_data(names, numbers, prices):
 
 
 if __name__ == "__main__":  # Best practice: main function
-    names, numbers, prices = scrape_card_data(SCRAPE_URL)
-    process_and_upload_data(names, numbers, prices)
+    names, numbers, prices, small_images, medium_images = scrape_card_data(
+        SCRAPE_URL)
+    process_and_upload_data(names, numbers, prices,
+                            small_images, medium_images)
