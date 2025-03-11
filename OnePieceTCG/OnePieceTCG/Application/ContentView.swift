@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showCamera = false
+    @State private var isCameraShown = false
     
     var body: some View {
         Button("Open Camera") {
-            showCamera.toggle()
+            isCameraShown.toggle()
         }
-        .sheet(isPresented: $showCamera) {
-            CameraView()
+        .sheet(isPresented: $isCameraShown) {
+            CameraView(isCameraShown: $isCameraShown)
         }
     }
 }

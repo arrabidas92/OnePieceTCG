@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CameraView: View {
+    @Binding var isCameraShown: Bool
     @State var manager = CameraManager()
     
     var body: some View {
@@ -17,6 +18,9 @@ struct CameraView: View {
             
             VStack {
                 HStack {
+                    CloseButtonView { isCameraShown = false }
+                    Spacer()
+                    Text("Capture your card")
                     Spacer()
                     Button(action: manager.toggleFlashMode) {
                         Image(systemName: getFlashIcon())

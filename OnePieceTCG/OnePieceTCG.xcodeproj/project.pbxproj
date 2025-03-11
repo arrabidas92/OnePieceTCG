@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4249E9D2D8097C200076DFC /* CloseButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249E9C2D8097C200076DFC /* CloseButtonView.swift */; };
 		B43936602C0A125900A59DCC /* OnePieceTCGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439365F2C0A125900A59DCC /* OnePieceTCGApp.swift */; };
 		B43936642C0A125B00A59DCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43936632C0A125B00A59DCC /* Assets.xcassets */; };
 		B43936672C0A125B00A59DCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43936662C0A125B00A59DCC /* Preview Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4249E9C2D8097C200076DFC /* CloseButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButtonView.swift; sourceTree = "<group>"; };
 		B439365C2C0A125900A59DCC /* OnePieceTCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnePieceTCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B439365F2C0A125900A59DCC /* OnePieceTCGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePieceTCGApp.swift; sourceTree = "<group>"; };
 		B43936632C0A125B00A59DCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +42,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4249E9A2D80979500076DFC /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				B4249E9B2D8097A900076DFC /* Views */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		B4249E9B2D8097A900076DFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4249E9C2D8097C200076DFC /* CloseButtonView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B43936532C0A125900A59DCC = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +97,7 @@
 				B439365F2C0A125900A59DCC /* OnePieceTCGApp.swift */,
 				B463ED342D5BA06B00BD0140 /* ContentView.swift */,
 				B4A8A30B2D6884A30091B8FD /* Camera */,
+				B4249E9A2D80979500076DFC /* DesignSystem */,
 				B43936632C0A125B00A59DCC /* Assets.xcassets */,
 			);
 			path = Application;
@@ -174,6 +193,7 @@
 				B4A8A30A2D6884960091B8FD /* CameraManager.swift in Sources */,
 				B4A8A3132D688CD40091B8FD /* CameraPreview.swift in Sources */,
 				B4A8A3152D688D110091B8FD /* CameraView.swift in Sources */,
+				B4249E9D2D8097C200076DFC /* CloseButtonView.swift in Sources */,
 				B463ED352D5BA06B00BD0140 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
