@@ -17,20 +17,12 @@ struct CameraView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                HStack {
-                    CloseButtonView { isCameraShown = false }
-                    Spacer()
-                    Text("Capture your card")
-                    Spacer()
-                    Button(action: manager.toggleFlashMode) {
-                        Image(systemName: getFlashIcon())
-                            .tint(Color(.white))
-                            .font(.system(size: 22))
-                            .frame(width: 44, height: 44)
-                    }
-                }
-                .padding(16)
-                .background { Color(.black).opacity(0.3) }
+                CameraHeader(
+                    title: "camera.title",
+                    onClose: { isCameraShown = false },
+                    onToggleFlash: manager.toggleFlashMode,
+                    getFlashIcon: { getFlashIcon() }
+                )
                 
                 Spacer()
                 

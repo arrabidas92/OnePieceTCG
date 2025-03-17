@@ -1,0 +1,27 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "camera.title" : {
+      "comment" : "Header title when user wants to capture a card",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capture your card"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capturez votre carte"
+          }
+        }
+      }
+    },
+    "Open Camera" : {
+
+    }
+  },
+  "version" : "1.0"
+}
