@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B4249E9D2D8097C200076DFC /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249E9C2D8097C200076DFC /* IconButton.swift */; };
 		B43936602C0A125900A59DCC /* OnePieceTCGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439365F2C0A125900A59DCC /* OnePieceTCGApp.swift */; };
 		B43936642C0A125B00A59DCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43936632C0A125B00A59DCC /* Assets.xcassets */; };
 		B43936672C0A125B00A59DCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43936662C0A125B00A59DCC /* Preview Assets.xcassets */; };
@@ -16,13 +15,11 @@
 		B4A8A3132D688CD40091B8FD /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A8A3122D688CD40091B8FD /* CameraPreview.swift */; };
 		B4A8A3152D688D110091B8FD /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A8A3142D688D110091B8FD /* CameraView.swift */; };
 		B4A8A3172D688E030091B8FD /* CameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A8A3162D688E030091B8FD /* CameraDelegate.swift */; };
-		B4F4C0112D8885C800929B64 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F4C0102D8885C800929B64 /* Constants.swift */; };
-		B4F4C0152D88878E00929B64 /* CameraHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F4C0142D88878E00929B64 /* CameraHeader.swift */; };
+		B4D41E802D8D6B2500796276 /* Camera in Frameworks */ = {isa = PBXBuildFile; productRef = B4D41E7F2D8D6B2500796276 /* Camera */; };
 		B4F4C0172D888A8900929B64 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B4F4C0162D888A8900929B64 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B4249E9C2D8097C200076DFC /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		B439365C2C0A125900A59DCC /* OnePieceTCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnePieceTCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B439365F2C0A125900A59DCC /* OnePieceTCGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePieceTCGApp.swift; sourceTree = "<group>"; };
 		B43936632C0A125B00A59DCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,8 +29,8 @@
 		B4A8A3122D688CD40091B8FD /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		B4A8A3142D688D110091B8FD /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		B4A8A3162D688E030091B8FD /* CameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDelegate.swift; sourceTree = "<group>"; };
-		B4F4C0102D8885C800929B64 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		B4F4C0142D88878E00929B64 /* CameraHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHeader.swift; sourceTree = "<group>"; };
+		B4D41E772D8D636600796276 /* UI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UI; path = ../UI; sourceTree = SOURCE_ROOT; };
+		B4D41E7A2D8D673100796276 /* Camera */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Camera; path = ../Camera; sourceTree = SOURCE_ROOT; };
 		B4F4C0162D888A8900929B64 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,34 +39,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4D41E802D8D6B2500796276 /* Camera in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B4249E9A2D80979500076DFC /* DesignSystem */ = {
-			isa = PBXGroup;
-			children = (
-				B4F4C00F2D8885B900929B64 /* Constants */,
-				B4249E9B2D8097A900076DFC /* Views */,
-			);
-			path = DesignSystem;
-			sourceTree = "<group>";
-		};
-		B4249E9B2D8097A900076DFC /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B4F4C0132D88877600929B64 /* Headers */,
-				B4F4C0122D88874A00929B64 /* Buttons */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		B43936532C0A125900A59DCC = {
 			isa = PBXGroup;
 			children = (
 				B439365E2C0A125900A59DCC /* OnePieceTCG */,
+				B4F4C01C2D8B416000929B64 /* Frameworks */,
 				B439365D2C0A125900A59DCC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				B439366D2C0A12B900A59DCC /* Application */,
+				B4D41E7A2D8D673100796276 /* Camera */,
+				B4D41E772D8D636600796276 /* UI */,
 				B43936652C0A125B00A59DCC /* Preview Content */,
 			);
 			path = OnePieceTCG;
@@ -105,7 +88,6 @@
 				B439365F2C0A125900A59DCC /* OnePieceTCGApp.swift */,
 				B463ED342D5BA06B00BD0140 /* ContentView.swift */,
 				B4A8A30B2D6884A30091B8FD /* Camera */,
-				B4249E9A2D80979500076DFC /* DesignSystem */,
 				B43936632C0A125B00A59DCC /* Assets.xcassets */,
 				B4F4C0162D888A8900929B64 /* Localizable.xcstrings */,
 			);
@@ -123,28 +105,11 @@
 			path = Camera;
 			sourceTree = "<group>";
 		};
-		B4F4C00F2D8885B900929B64 /* Constants */ = {
+		B4F4C01C2D8B416000929B64 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B4F4C0102D8885C800929B64 /* Constants.swift */,
 			);
-			path = Constants;
-			sourceTree = "<group>";
-		};
-		B4F4C0122D88874A00929B64 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				B4249E9C2D8097C200076DFC /* IconButton.swift */,
-			);
-			path = Buttons;
-			sourceTree = "<group>";
-		};
-		B4F4C0132D88877600929B64 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				B4F4C0142D88878E00929B64 /* CameraHeader.swift */,
-			);
-			path = Headers;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +129,7 @@
 			);
 			name = OnePieceTCG;
 			packageProductDependencies = (
+				B4D41E7F2D8D6B2500796276 /* Camera */,
 			);
 			productName = OnePieceTCG;
 			productReference = B439365C2C0A125900A59DCC /* OnePieceTCG.app */;
@@ -177,7 +143,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					B439365B2C0A125900A59DCC = {
 						CreatedOnToolsVersion = 15.3;
@@ -228,10 +194,7 @@
 				B4A8A30A2D6884960091B8FD /* CameraManager.swift in Sources */,
 				B4A8A3132D688CD40091B8FD /* CameraPreview.swift in Sources */,
 				B4A8A3152D688D110091B8FD /* CameraView.swift in Sources */,
-				B4249E9D2D8097C200076DFC /* IconButton.swift in Sources */,
 				B463ED352D5BA06B00BD0140 /* ContentView.swift in Sources */,
-				B4F4C0152D88878E00929B64 /* CameraHeader.swift in Sources */,
-				B4F4C0112D8885C800929B64 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +206,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -307,6 +271,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -366,7 +331,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"OnePieceTCG/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "OnePieceTCG/Preview\\ Content";
 				DEVELOPMENT_TEAM = 43955M7DU9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -402,7 +367,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"OnePieceTCG/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "OnePieceTCG/Preview\\ Content";
 				DEVELOPMENT_TEAM = 43955M7DU9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -453,6 +418,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B4D41E7F2D8D6B2500796276 /* Camera */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Camera;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B43936542C0A125900A59DCC /* Project object */;
 }

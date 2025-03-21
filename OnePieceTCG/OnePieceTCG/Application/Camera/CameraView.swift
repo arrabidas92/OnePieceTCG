@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Camera
 
 struct CameraView: View {
     @Binding var isCameraShown: Bool
@@ -26,13 +27,7 @@ struct CameraView: View {
                 
                 Spacer()
                 
-                Button(action: manager.capturePhoto) {
-                    Circle()
-                        .frame(width: 70, height: 70)
-                        .foregroundColor(.white)
-                        .overlay(Circle().stroke(Color.black, lineWidth: 2))
-                }
-                .padding(.bottom, 20)
+                
             }
         }
         .onAppear { manager.configure(); manager.start() }

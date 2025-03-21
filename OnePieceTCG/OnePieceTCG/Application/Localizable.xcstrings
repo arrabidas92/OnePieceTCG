@@ -1,6 +1,24 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "camera.cta" : {
+      "comment" : "Call to action to open the camera",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Camera"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir l’appareil photo"
+          }
+        }
+      }
+    },
     "camera.title" : {
       "comment" : "Header title when user wants to capture a card",
       "extractionState" : "manual",
@@ -18,9 +36,6 @@
           }
         }
       }
-    },
-    "Open Camera" : {
-
     }
   },
   "version" : "1.0"

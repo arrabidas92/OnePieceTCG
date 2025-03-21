@@ -1,4 +1,3 @@
-//
 //  CameraHeader.swift
 //  OnePieceTCG
 //
@@ -6,14 +5,27 @@
 //
 
 import SwiftUI
+import UI
 
-struct CameraHeader: View {
+public struct CameraHeader: View {
     let title: String
     let onClose: () -> Void
     let onToggleFlash: () -> Void
     let getFlashIcon: () -> String
 
-    var body: some View {
+    public init(
+        title: String,
+        onClose: @escaping () -> Void,
+        onToggleFlash: @escaping () -> Void,
+        getFlashIcon: @escaping () -> String
+    ) {
+        self.title = title
+        self.onClose = onClose
+        self.onToggleFlash = onToggleFlash
+        self.getFlashIcon = getFlashIcon
+    }
+    
+    public var body: some View {
         HStack {
             IconButton(
                 imageSystemName: "xmark",
@@ -29,7 +41,7 @@ struct CameraHeader: View {
                 action: onToggleFlash
             )
         }
-        .padding(DesignSystem.Spacing.md.rawValue)
+        .padding(Spacing.md)
         .background { Color(.black).opacity(0.3) }
     }
 }

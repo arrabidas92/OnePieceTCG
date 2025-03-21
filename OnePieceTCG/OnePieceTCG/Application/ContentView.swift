@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var isCameraShown = false
     
     var body: some View {
-        Button("Open Camera") {
+        Button("camera.cta") {
             isCameraShown.toggle()
         }
         .sheet(isPresented: $isCameraShown) {
