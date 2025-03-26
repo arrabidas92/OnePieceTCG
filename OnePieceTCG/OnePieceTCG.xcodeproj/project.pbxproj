@@ -11,10 +11,6 @@
 		B43936642C0A125B00A59DCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43936632C0A125B00A59DCC /* Assets.xcassets */; };
 		B43936672C0A125B00A59DCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43936662C0A125B00A59DCC /* Preview Assets.xcassets */; };
 		B463ED352D5BA06B00BD0140 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B463ED342D5BA06B00BD0140 /* ContentView.swift */; };
-		B4A8A30A2D6884960091B8FD /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A8A3092D6884960091B8FD /* CameraManager.swift */; };
-		B4A8A3132D688CD40091B8FD /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A8A3122D688CD40091B8FD /* CameraPreview.swift */; };
-		B4A8A3152D688D110091B8FD /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A8A3142D688D110091B8FD /* CameraView.swift */; };
-		B4A8A3172D688E030091B8FD /* CameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A8A3162D688E030091B8FD /* CameraDelegate.swift */; };
 		B4D41E802D8D6B2500796276 /* Camera in Frameworks */ = {isa = PBXBuildFile; productRef = B4D41E7F2D8D6B2500796276 /* Camera */; };
 		B4F4C0172D888A8900929B64 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B4F4C0162D888A8900929B64 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
@@ -25,10 +21,6 @@
 		B43936632C0A125B00A59DCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B43936662C0A125B00A59DCC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B463ED342D5BA06B00BD0140 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B4A8A3092D6884960091B8FD /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
-		B4A8A3122D688CD40091B8FD /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
-		B4A8A3142D688D110091B8FD /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		B4A8A3162D688E030091B8FD /* CameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDelegate.swift; sourceTree = "<group>"; };
 		B4D41E772D8D636600796276 /* UI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UI; path = ../UI; sourceTree = SOURCE_ROOT; };
 		B4D41E7A2D8D673100796276 /* Camera */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Camera; path = ../Camera; sourceTree = SOURCE_ROOT; };
 		B4F4C0162D888A8900929B64 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -87,22 +79,10 @@
 			children = (
 				B439365F2C0A125900A59DCC /* OnePieceTCGApp.swift */,
 				B463ED342D5BA06B00BD0140 /* ContentView.swift */,
-				B4A8A30B2D6884A30091B8FD /* Camera */,
 				B43936632C0A125B00A59DCC /* Assets.xcassets */,
 				B4F4C0162D888A8900929B64 /* Localizable.xcstrings */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		B4A8A30B2D6884A30091B8FD /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-				B4A8A3142D688D110091B8FD /* CameraView.swift */,
-				B4A8A3122D688CD40091B8FD /* CameraPreview.swift */,
-				B4A8A3092D6884960091B8FD /* CameraManager.swift */,
-				B4A8A3162D688E030091B8FD /* CameraDelegate.swift */,
-			);
-			path = Camera;
 			sourceTree = "<group>";
 		};
 		B4F4C01C2D8B416000929B64 /* Frameworks */ = {
@@ -190,10 +170,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B43936602C0A125900A59DCC /* OnePieceTCGApp.swift in Sources */,
-				B4A8A3172D688E030091B8FD /* CameraDelegate.swift in Sources */,
-				B4A8A30A2D6884960091B8FD /* CameraManager.swift in Sources */,
-				B4A8A3132D688CD40091B8FD /* CameraPreview.swift in Sources */,
-				B4A8A3152D688D110091B8FD /* CameraView.swift in Sources */,
 				B463ED352D5BA06B00BD0140 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,10 +305,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "OnePieceTCG/Preview\\ Content";
-				DEVELOPMENT_TEAM = 43955M7DU9;
+				DEVELOPMENT_TEAM = FH5JG87Y74;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
@@ -350,6 +327,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oway.app.OnePieceTCG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

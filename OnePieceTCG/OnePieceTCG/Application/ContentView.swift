@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Camera
+import UI
 
 struct ContentView: View {
     @State private var isCameraShown = false

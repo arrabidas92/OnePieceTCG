@@ -8,10 +8,10 @@ import SwiftUI
 import UI
 
 public struct CameraHeader: View {
-    let title: String
-    let onClose: () -> Void
-    let onToggleFlash: () -> Void
-    let getFlashIcon: () -> String
+    private let title: String
+    private let onClose: () -> Void
+    private let onToggleFlash: () -> Void
+    private let getFlashIcon: () -> String
 
     public init(
         title: String,

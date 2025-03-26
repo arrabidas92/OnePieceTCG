@@ -8,13 +8,18 @@
 import SwiftUI
 import AVFoundation
 
-@Observable final class CameraManager {
-    var session = AVCaptureSession()
-    var capturedImage: UIImage? = nil
-    var flashMode: AVCaptureDevice.FlashMode = .off
+@Observable final class CameraManager: @unchecked Sendable {
+    @MainActor var capturedImage: UIImage?
+    var flashMode: AVCaptureDevice.FlashMode
     
+    private(set) var session = AVCaptureSession()
     private let photoOutput = AVCapturePhotoOutput()
     private let sessionQueue = DispatchQueue(label: "com.oway.app.onepiecetcg.session.queue")
+    private let cameraProcessor = CameraProcessor()
+    
+    init(flashMode: AVCaptureDevice.FlashMode) {
+        self.flashMode = flashMode
+    }
     
     func configure() {
         sessionQueue.async {
@@ -68,11 +73,12 @@ import AVFoundation
         let settings = AVCapturePhotoSettings()
         settings.flashMode = flashMode
         
-        photoOutput.capturePhoto(
-            with: settings,
-            delegate: CameraDelegate { [weak self] image in
-                self?.capturedImage = image
+        Task { @MainActor in
+            do {
+                capturedImage = try await cameraProcessor.startCapture(from: photoOutput, using: settings)
+            } catch let error {
+                print(error.localizedDescription)
             }
-        )
+        }
     }
 }

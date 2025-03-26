@@ -14,7 +14,11 @@ struct CameraPreview: UIViewRepresentable {
         var videoPreviewLayer: AVCaptureVideoPreviewLayer { layer as! AVCaptureVideoPreviewLayer }
     }
 
-    let session: AVCaptureSession
+    private let session: AVCaptureSession
+    
+    init(session: AVCaptureSession) {
+        self.session = session
+    }
 
     func makeUIView(context: Context) -> VideoPreviewView {
         let view = VideoPreviewView()

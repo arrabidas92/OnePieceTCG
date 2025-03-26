@@ -6,13 +6,20 @@
 //
 
 import SwiftUI
-import Camera
+import AVFoundation
 
-struct CameraView: View {
-    @Binding var isCameraShown: Bool
-    @State var manager = CameraManager()
+public struct CameraView: View {
+    @Binding private var isCameraShown: Bool
+    @State private var manager: CameraManager
     
-    var body: some View {
+    public init(isCameraShown: Binding<Bool>) {
+        self._isCameraShown = isCameraShown
+        self._manager = State(
+            initialValue: CameraManager(flashMode: .off)
+        )
+    }
+    
+    public var body: some View {
         ZStack {
             CameraPreview(session: manager.session)
                 .edgesIgnoringSafeArea(.all)
