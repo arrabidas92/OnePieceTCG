@@ -1,9 +1,12 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
-
+//
+//  OPSpacing.swift
+//  UI
+//
+//  Created by Alexandre DUARTE on 21/03/2025.
+//
 import CoreGraphics
 
-public enum Spacing {
+public enum OPSpacing {
     /// Const: 2px
     public static let xss: CGFloat = 2.0
     

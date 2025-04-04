@@ -27,30 +27,22 @@ public struct CameraHeader: View {
     
     public var body: some View {
         HStack {
-            IconButton(
-                imageSystemName: "xmark",
+            OPIconButton(
+                image: "xmark",
                 accessibilityLabel: "Close",
                 action: onClose
             )
+            
             Spacer()
             Text(LocalizedStringResource(stringLiteral: title))
             Spacer()
-            IconButton(
-                imageSystemName: getFlashIcon(),
+            OPIconButton(
+                image: getFlashIcon(),
                 accessibilityLabel: "Flash",
                 action: onToggleFlash
             )
         }
-        .padding(Spacing.md)
+        .padding(OPSpacing.md)
         .background { Color(.black).opacity(0.3) }
     }
-}
-
-#Preview {
-    CameraHeader(
-        title: "camera.title",
-        onClose: {},
-        onToggleFlash: {},
-        getFlashIcon: { "bolt" }
-    )
 }

@@ -15,7 +15,9 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "UI"),
+            name: "UI",
+            resources: [.process("Resources/Colors.xcassets")]
+        ),
 
     ]
 )

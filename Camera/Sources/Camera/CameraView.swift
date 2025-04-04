@@ -7,7 +7,8 @@
 
 import SwiftUI
 import AVFoundation
-
+import UI
+//Add module localization
 public struct CameraView: View {
     @Binding private var isCameraShown: Bool
     @State private var manager: CameraManager
@@ -34,7 +35,12 @@ public struct CameraView: View {
                 
                 Spacer()
                 
-                
+                OPCircleButton(
+                    accessibilityLabel: "camera.capture.button"
+                ) {
+                    manager.capturePhoto()
+                }
+                .padding(.bottom, OPSpacing.sm)
             }
         }
         .onAppear { manager.configure(); manager.start() }
