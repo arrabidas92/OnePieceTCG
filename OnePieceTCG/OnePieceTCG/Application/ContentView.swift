@@ -11,11 +11,13 @@ import UI
 
 struct ContentView: View {
     @State private var isCameraShown = false
-    
+    //Add to top right bar
     var body: some View {
-        Button("camera.cta") {
-            isCameraShown.toggle()
-        }
+        OPIconButton(
+            image: "xmark",
+            accessibilityLabel: "close",
+            action: { isCameraShown.toggle() }
+        )
         .sheet(isPresented: $isCameraShown) {
             CameraView(isCameraShown: $isCameraShown)
         }

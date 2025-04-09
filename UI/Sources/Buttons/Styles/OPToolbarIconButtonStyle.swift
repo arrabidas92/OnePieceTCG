@@ -19,7 +19,6 @@ public struct OPToolbarIconButtonStyle: OPIconButtonStyle {
                 .font(OPFontType.CTA.regular)
                 .frame(width: OPSize.Toolbar.width, height: OPSize.Button.height)
                 .accessibilityLabel(content.accessibilityLabel)
-            
         }
     }
 }

@@ -8,18 +8,15 @@ import SwiftUI
 import UI
 
 public struct CameraHeader: View {
-    private let title: String
     private let onClose: () -> Void
     private let onToggleFlash: () -> Void
     private let getFlashIcon: () -> String
 
     public init(
-        title: String,
         onClose: @escaping () -> Void,
         onToggleFlash: @escaping () -> Void,
         getFlashIcon: @escaping () -> String
     ) {
-        self.title = title
         self.onClose = onClose
         self.onToggleFlash = onToggleFlash
         self.getFlashIcon = getFlashIcon
@@ -29,16 +26,16 @@ public struct CameraHeader: View {
         HStack {
             OPIconButton(
                 image: "xmark",
-                accessibilityLabel: "Close",
+                accessibilityLabel: "close",
                 action: onClose
             )
             
             Spacer()
-            Text(LocalizedStringResource(stringLiteral: title))
+            Text("camera.title", bundle: .module)
             Spacer()
             OPIconButton(
                 image: getFlashIcon(),
-                accessibilityLabel: "Flash",
+                accessibilityLabel: "flash",
                 action: onToggleFlash
             )
         }

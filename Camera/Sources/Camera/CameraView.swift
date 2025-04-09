@@ -8,7 +8,7 @@
 import SwiftUI
 import AVFoundation
 import UI
-//Add module localization
+
 public struct CameraView: View {
     @Binding private var isCameraShown: Bool
     @State private var manager: CameraManager
@@ -27,7 +27,6 @@ public struct CameraView: View {
             
             VStack {
                 CameraHeader(
-                    title: "camera.title",
                     onClose: { isCameraShown = false },
                     onToggleFlash: manager.toggleFlashMode,
                     getFlashIcon: { getFlashIcon() }
@@ -36,7 +35,7 @@ public struct CameraView: View {
                 Spacer()
                 
                 OPCircleButton(
-                    accessibilityLabel: "camera.capture.button"
+                    accessibilityLabel: "capture.button"
                 ) {
                     manager.capturePhoto()
                 }

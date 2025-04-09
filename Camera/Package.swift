@@ -19,8 +19,10 @@ let package = Package(
     targets: [
         .target(
             name: "Camera",
-            dependencies: ["UI"]
+            dependencies: ["UI"],
+            resources: [
+                .process("../Resources/Localizable.xcstrings")
+            ]
         ),
-
     ]
 )

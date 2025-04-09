@@ -26,7 +26,12 @@ public struct OPCameraCircleButtonStyle: OPCircleButtonStyle {
                         lineWidth: OPStroke.Border.thin
                     )
                 )
-                .accessibilityLabel(content.accessibilityLabel)
+                .accessibilityLabel(
+                    Text(
+                        LocalizedStringKey(stringLiteral: content.accessibilityLabel),
+                        bundle: .module
+                    )
+                )
         }
     }
 }

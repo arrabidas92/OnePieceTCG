@@ -16,7 +16,10 @@ let package = Package(
     targets: [
         .target(
             name: "UI",
-            resources: [.process("Resources/Colors.xcassets")]
+            resources: [
+                .process("Resources/Colors.xcassets"),
+                .process("Resources/Localizable.xcstrings")
+            ]
         ),
 
     ]
