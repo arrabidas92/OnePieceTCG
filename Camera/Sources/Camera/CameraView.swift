@@ -21,29 +21,46 @@ public struct CameraView: View {
     }
     
     public var body: some View {
-        ZStack {
-            CameraPreview(session: manager.session)
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack {
+        switch manager.viewState {
+        case .preview:
+            ZStack {
+                CameraPreview(session: manager.session)
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    CameraHeader(
+                        onClose: { isCameraShown = false },
+                        onToggleFlash: manager.toggleFlashMode,
+                        getFlashIcon: { getFlashIcon() }
+                    )
+                    
+                    Spacer()
+                    
+                    OPCircleButton(
+                        accessibilityLabel: "capture.button"
+                    ) {
+                        manager.capturePhoto()
+                    }
+                    .padding(.bottom, OPSpacing.sm)
+                }
+            }
+            .onAppear { manager.configure(); manager.start() }
+            .onDisappear { manager.stop() }
+        case .captured(let image):
+            //TODO:Refactor this to his own view
+            ZStack(alignment: .top) {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+                
                 CameraHeader(
                     onClose: { isCameraShown = false },
                     onToggleFlash: manager.toggleFlashMode,
                     getFlashIcon: { getFlashIcon() }
                 )
-                
-                Spacer()
-                
-                OPCircleButton(
-                    accessibilityLabel: "capture.button"
-                ) {
-                    manager.capturePhoto()
-                }
-                .padding(.bottom, OPSpacing.sm)
             }
+            .edgesIgnoringSafeArea(.all)
         }
-        .onAppear { manager.configure(); manager.start() }
-        .onDisappear { manager.stop() }
     }
     
     private func getFlashIcon() -> String {

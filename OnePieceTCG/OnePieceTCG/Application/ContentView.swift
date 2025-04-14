@@ -11,13 +11,23 @@ import UI
 
 struct ContentView: View {
     @State private var isCameraShown = false
-    //Add to top right bar
+    
     var body: some View {
-        OPIconButton(
-            image: "xmark",
-            accessibilityLabel: "close",
-            action: { isCameraShown.toggle() }
-        )
+        NavigationStack {
+            VStack {
+                
+            }
+            .navigationTitle("Wallet")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    OPIconButton(
+                        image: "plus",
+                        accessibilityLabel: "plus",
+                        action: { isCameraShown.toggle() }
+                    )
+                }
+            }
+        }
         .sheet(isPresented: $isCameraShown) {
             CameraView(isCameraShown: $isCameraShown)
         }

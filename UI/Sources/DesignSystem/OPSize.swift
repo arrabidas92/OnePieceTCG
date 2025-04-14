@@ -9,8 +9,8 @@ import CoreGraphics
 
 public enum OPSize {
     public enum Toolbar {
-        /// Toolbar item width 32px
-        public static let width: CGFloat = 32.0
+        /// Toolbar item width 28px
+        public static let width: CGFloat = 28.0
     }
     public enum Button {
         /// Button height 44px

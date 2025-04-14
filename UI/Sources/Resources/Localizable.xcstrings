@@ -54,6 +54,24 @@
           }
         }
       }
+    },
+    "plus" : {
+      "comment" : "Call to action to add",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

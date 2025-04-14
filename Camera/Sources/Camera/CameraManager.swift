@@ -9,7 +9,7 @@ import SwiftUI
 import AVFoundation
 
 @Observable final class CameraManager: @unchecked Sendable {
-    @MainActor var capturedImage: UIImage?
+    @MainActor var viewState = CameraViewState.preview
     var flashMode: AVCaptureDevice.FlashMode
     
     private(set) var session = AVCaptureSession()
@@ -75,7 +75,10 @@ import AVFoundation
         
         Task { @MainActor in
             do {
-                capturedImage = try await cameraProcessor.startCapture(from: photoOutput, using: settings)
+                //TODO: Send captured image to chat gpt to extract infos about the card captured
+                //TODO: Once got the result chat gpt then give price estimation and call user to fulfille which version of the card is it: v1, v2 ...and also the condition of the card if possible
+                let image = try await cameraProcessor.startCapture(from: photoOutput, using: settings)
+                viewState = .captured(image)
             } catch let error {
                 print(error.localizedDescription)
             }
