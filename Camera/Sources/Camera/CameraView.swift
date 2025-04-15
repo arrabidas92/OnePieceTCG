@@ -9,6 +9,9 @@ import SwiftUI
 import AVFoundation
 import UI
 
+//TODO: Send captured image to chat gpt to extract infos about the card captured
+//TODO: Once got the result chat gpt then give price estimation and call user to fulfille which version of the card is it: v1, v2 ...and also the condition of the card if possible
+
 public struct CameraView: View {
     @Binding private var isCameraShown: Bool
     @State private var manager: CameraManager
@@ -23,56 +26,9 @@ public struct CameraView: View {
     public var body: some View {
         switch manager.viewState {
         case .preview:
-            ZStack {
-                CameraPreview(session: manager.session)
-                    .edgesIgnoringSafeArea(.all)
-                
-                VStack {
-                    CameraHeader(
-                        onClose: { isCameraShown = false },
-                        onToggleFlash: manager.toggleFlashMode,
-                        getFlashIcon: { getFlashIcon() }
-                    )
-                    
-                    Spacer()
-                    
-                    OPCircleButton(
-                        accessibilityLabel: "capture.button"
-                    ) {
-                        manager.capturePhoto()
-                    }
-                    .padding(.bottom, OPSpacing.sm)
-                }
-            }
-            .onAppear { manager.configure(); manager.start() }
-            .onDisappear { manager.stop() }
+            CameraPreviewView(isCameraShown: $isCameraShown, manager: $manager)
         case .captured(let image):
-            //TODO:Refactor this to his own view
-            ZStack(alignment: .top) {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFill()
-                
-                CameraHeader(
-                    onClose: { isCameraShown = false },
-                    onToggleFlash: manager.toggleFlashMode,
-                    getFlashIcon: { getFlashIcon() }
-                )
-            }
-            .edgesIgnoringSafeArea(.all)
-        }
-    }
-    
-    private func getFlashIcon() -> String {
-        switch manager.flashMode {
-        case .off:
-            return "bolt.slash.fill"
-        case .on:
-            return "bolt.fill"
-        case .auto:
-            return "bolt.badge.a.fill"
-        @unknown default:
-            return "bolt.slash.fill"
+            CameraCapturedView(manager: $manager, image: image)
         }
     }
 }
