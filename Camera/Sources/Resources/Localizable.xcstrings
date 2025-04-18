@@ -18,24 +18,6 @@
           }
         }
       }
-    },
-    "camera.title" : {
-      "comment" : "Header title when user wants to capture a card",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Capture your card"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Capturez votre carte"
-          }
-        }
-      }
     }
   },
   "version" : "1.0"

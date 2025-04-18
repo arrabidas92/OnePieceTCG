@@ -11,6 +11,6 @@ public protocol OPViewStyle {
   associatedtype Content
   associatedtype Body: View
     
-  @ViewBuilder
+  @MainActor
   func body(content: Content) -> Body
 }

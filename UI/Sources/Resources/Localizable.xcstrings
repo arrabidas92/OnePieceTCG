@@ -1,6 +1,24 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "camera.title" : {
+      "comment" : "Header title when user wants to capture a card",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capture your card"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capturez votre carte"
+          }
+        }
+      }
+    },
     "capture.button" : {
       "comment" : "Call to action to capture an image",
       "extractionState" : "manual",
@@ -69,6 +87,42 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajoutez"
+          }
+        }
+      }
+    },
+    "retake" : {
+      "comment" : "Call to action to retake a picture",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retake"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reprendre"
+          }
+        }
+      }
+    },
+    "save" : {
+      "comment" : "Call to action to save",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sauvegarder"
           }
         }
       }

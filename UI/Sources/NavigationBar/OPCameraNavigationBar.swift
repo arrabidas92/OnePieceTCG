@@ -11,7 +11,7 @@ public struct OPCameraNavigationBarContent {
     let leftImage: String
     let leftAccessibilityLabel: String
     let leftAction: () -> Void
-    let title: String
+    let title: LocalizedStringKey
     let rightImage: String
     let rightAccessibilityLabel: String
     let rightAction: () -> Void
@@ -20,7 +20,7 @@ public struct OPCameraNavigationBarContent {
         leftImage: String,
         leftAccessibilityLabel: String,
         leftAction: @escaping () -> Void,
-        title: String,
+        title: LocalizedStringKey,
         rightImage: String,
         rightAccessibilityLabel: String,
         rightAction: @escaping () -> Void
@@ -35,13 +35,18 @@ public struct OPCameraNavigationBarContent {
     }
 }
 
-protocol OPCameraNavigationBarStyle: OPViewStyle where Content == OPCameraNavigationBarContent {}
+public protocol OPCameraNavigationBarStyle: OPViewStyle where Content == OPCameraNavigationBarContent {}
 
-public struct OPCameraNavigationBarStyledContent<Style: OPCameraNavigationBarStyle>: View {
+public struct OPCameraNavigationBar<Style: OPCameraNavigationBarStyle>: View {
     let content: OPCameraNavigationBarContent
     let style: Style
 
-    var body: some View {
+    public init(content: OPCameraNavigationBarContent, style: Style) {
+        self.content = content
+        self.style = style
+    }
+    
+    public var body: some View {
         style.body(content: content)
     }
 }
@@ -49,7 +54,7 @@ public struct OPCameraNavigationBarStyledContent<Style: OPCameraNavigationBarSty
 public struct OPCameraPreviewNavigationBarStyle: OPCameraNavigationBarStyle {
     public init() {}
     
-    func body(content: OPCameraNavigationBarContent) -> some View {
+    public func body(content: OPCameraNavigationBarContent) -> some View {
         HStack {
             Button(action: content.leftAction) {
                 Image(systemName: content.leftImage)
@@ -60,9 +65,14 @@ public struct OPCameraPreviewNavigationBarStyle: OPCameraNavigationBarStyle {
                     .frame(width: OPSize.Toolbar.width, height: OPSize.Button.height)
                     .accessibilityLabel(content.leftAccessibilityLabel)
             }
+            
             Spacer()
+            
             Text(content.title, bundle: .module)
+                .font(OPFontType.CTA.regular)
+            
             Spacer()
+            
             Button(action: content.rightAction) {
                 Image(systemName: content.rightImage)
                     .foregroundStyle(
@@ -72,6 +82,45 @@ public struct OPCameraPreviewNavigationBarStyle: OPCameraNavigationBarStyle {
                     .frame(width: OPSize.Toolbar.width, height: OPSize.Button.height)
                     .accessibilityLabel(content.rightAccessibilityLabel)
             }
+        }
+        .padding(OPSpacing.md)
+        .background { Color(.black).opacity(0.3) }
+    }
+}
+
+public struct OPCameraCapturedNavigationBarStyle: OPCameraNavigationBarStyle {
+    public init() {}
+    
+    public func body(content: OPCameraNavigationBarContent) -> some View {
+        HStack {
+            Button(action: content.leftAction) {
+                Text(
+                    LocalizedStringKey(stringLiteral: content.leftImage),
+                    bundle: .module
+                )
+                .foregroundStyle(Color("Content", bundle: .module))
+                .font(OPFontType.CTA.regular)
+            }
+            .frame(height: OPSize.Button.height)
+            .accessibilityLabel(content.leftAccessibilityLabel)
+            
+            Spacer()
+            
+            Text(content.title, bundle: .module)
+                .font(OPFontType.CTA.regular)
+            
+            Spacer()
+            
+            Button(action: content.rightAction) {
+                Text(
+                    LocalizedStringKey(stringLiteral: content.rightImage),
+                    bundle: .module
+                )
+                .foregroundStyle(Color("Content", bundle: .module))
+                .font(OPFontType.CTA.regular)
+            }
+            .frame(height: OPSize.Button.height)
+            .accessibilityLabel(content.rightAccessibilityLabel)
         }
         .padding(OPSpacing.md)
         .background { Color(.black).opacity(0.3) }

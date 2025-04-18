@@ -22,13 +22,21 @@ public struct CameraCapturedView: View {
             Image(uiImage: image)
                 .resizable()
                 .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             
-            CameraHeader(
-                onClose: { print("on retake") },
-                onToggleFlash: manager.toggleFlashMode,
-                getFlashIcon: { "" }
+            OPCameraNavigationBar(
+                content: OPCameraNavigationBarContent(
+                    leftImage: "retake",
+                    leftAccessibilityLabel: "retake",
+                    leftAction: { manager.viewState = .preview },
+                    title: LocalizedStringKey(stringLiteral: "Confirm capture"),
+                    rightImage: "save",
+                    rightAccessibilityLabel: "save",
+                    rightAction: { print("on save") }
+                ),
+                style: OPCameraCapturedNavigationBarStyle()
             )
         }
-        .edgesIgnoringSafeArea(.all)
     }
 }

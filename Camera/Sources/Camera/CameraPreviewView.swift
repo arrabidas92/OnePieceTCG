@@ -22,11 +22,18 @@ public struct CameraPreviewView: View {
             CameraPreview(session: manager.session)
                 .edgesIgnoringSafeArea(.all)
             
-            VStack { //Need to refactor this to make it more generic
-                CameraHeader(
-                    onClose: { isCameraShown = false },
-                    onToggleFlash: manager.toggleFlashMode,
-                    getFlashIcon: { getFlashIcon() }
+            VStack {
+                OPCameraNavigationBar(
+                    content: OPCameraNavigationBarContent(
+                        leftImage: "xmark",
+                        leftAccessibilityLabel: "close",
+                        leftAction: { isCameraShown = false },
+                        title: LocalizedStringKey(stringLiteral: "camera.title"),
+                        rightImage: getFlashIcon(),
+                        rightAccessibilityLabel: "flash",
+                        rightAction: { manager.toggleFlashMode() }
+                    ),
+                    style: OPCameraPreviewNavigationBarStyle()
                 )
                 
                 Spacer()
