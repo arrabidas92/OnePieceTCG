@@ -10,18 +10,17 @@ import AVFoundation
 
 @Observable public final class CameraManager: @unchecked Sendable {
     @MainActor var viewState = CameraViewState.preview
-    var flashMode: AVCaptureDevice.FlashMode
     
+    private(set) var flashMode: AVCaptureDevice.FlashMode
     private(set) var session = AVCaptureSession()
+    
     private let photoOutput = AVCapturePhotoOutput()
     private let sessionQueue = DispatchQueue(label: "com.oway.app.onepiecetcg.session.queue")
     private let cameraProcessor = CameraProcessor()
     
     init(flashMode: AVCaptureDevice.FlashMode) {
         self.flashMode = flashMode
-    }
-    
-    func configure() {
+        
         sessionQueue.async {
             self.session.beginConfiguration()
             self.session.sessionPreset = .photo
@@ -81,5 +80,10 @@ import AVFoundation
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    @MainActor
+    func retakePhoto() {
+        viewState = .preview
     }
 }

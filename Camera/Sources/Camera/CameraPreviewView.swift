@@ -27,7 +27,10 @@ public struct CameraPreviewView: View {
                     content: OPCameraNavigationBarContent(
                         leftImage: "xmark",
                         leftAccessibilityLabel: "close",
-                        leftAction: { isCameraShown = false },
+                        leftAction: {
+                            stopCamera()
+                            dismissCamera()
+                        },
                         title: LocalizedStringKey(stringLiteral: "camera.title"),
                         rightImage: getFlashIcon(),
                         rightAccessibilityLabel: "flash",
@@ -42,8 +45,7 @@ public struct CameraPreviewView: View {
                     .padding(.bottom, OPSpacing.sm)
             }
         }
-        .onAppear { manager.configure(); manager.start() }
-        .onDisappear { manager.stop() }
+        .onAppear { manager.start() }
     }
     
     private func getFlashIcon() -> String {
@@ -57,5 +59,13 @@ public struct CameraPreviewView: View {
         @unknown default:
             return "bolt.slash.fill"
         }
+    }
+    
+    private func stopCamera() {
+        manager.stop()
+    }
+    
+    private func dismissCamera() {
+        isCameraShown = false
     }
 }

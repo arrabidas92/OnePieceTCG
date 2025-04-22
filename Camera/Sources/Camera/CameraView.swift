@@ -28,7 +28,7 @@ public struct CameraView: View {
         case .preview:
             CameraPreviewView(isCameraShown: $isCameraShown, manager: $manager)
         case .captured(let image):
-            CameraCapturedView(manager: $manager, image: image)
+            CameraCapturedView(isCameraShown: $isCameraShown, manager: $manager, image: image)
         }
     }
 }

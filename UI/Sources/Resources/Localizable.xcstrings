@@ -1,6 +1,24 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "camera.confirm.capture" : {
+      "comment" : "Call to action to confirm card's capture",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm your card"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Confirmez votre carte"
+          }
+        }
+      }
+    },
     "camera.title" : {
       "comment" : "Header title when user wants to capture a card",
       "extractionState" : "manual",
