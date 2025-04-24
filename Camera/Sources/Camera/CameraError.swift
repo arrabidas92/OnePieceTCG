@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum CameraError: Error {
+public enum CameraError: Error {
     case invalidData
     case failedToCreateImage
+    case failedToGetJpegData
 }

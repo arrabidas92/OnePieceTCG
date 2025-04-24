@@ -9,13 +9,14 @@ import SwiftUI
 import UI
 
 public struct CameraCapturedView: View {
-    @Binding private var isCameraShown: Bool
-    @Binding private var manager: CameraManager
+    private let manager: CameraManager
     private let image: UIImage
     
-    public init(isCameraShown: Binding<Bool>, manager: Binding<CameraManager>, image: UIImage) {
-        self._isCameraShown = isCameraShown
-        self._manager = manager
+    public init(
+        manager: CameraManager,
+        image: UIImage
+    ) {
+        self.manager = manager
         self.image = image
     }
     
@@ -35,18 +36,11 @@ public struct CameraCapturedView: View {
                     title: LocalizedStringKey(stringLiteral: "camera.confirm.capture"),
                     rightImage: "save",
                     rightAccessibilityLabel: "save",
-                    rightAction: {
-                        //Need to return UIImage data then to post to chat gpt to extract data from it
-                        dismissCamera()
-                    }
+                    rightAction: { manager.convertToBase64(image: image) }
                 ),
                 style: OPCameraCapturedNavigationBarStyle()
             )
         }
         .onAppear { manager.stop() }
-    }
-    
-    private func dismissCamera() { //Redundant function with CameraPreviewView
-        isCameraShown = false
     }
 }

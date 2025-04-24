@@ -26,9 +26,22 @@ public struct CameraView: View {
     public var body: some View {
         switch manager.viewState {
         case .preview:
-            CameraPreviewView(isCameraShown: $isCameraShown, manager: $manager)
+            CameraPreviewView(manager: manager)
         case .captured(let image):
-            CameraCapturedView(isCameraShown: $isCameraShown, manager: $manager, image: image)
+            CameraCapturedView(
+                manager: manager,
+                image: image
+            )
+        case .analyze(let imageData):
+            //to implement
+            EmptyView()
+        case .error(let error):
+            //to implement
+            EmptyView()
+            
+        case .closed:
+            EmptyView()
+            //isCameraShown = false
         }
     }
 }

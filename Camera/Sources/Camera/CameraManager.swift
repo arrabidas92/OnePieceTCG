@@ -27,7 +27,10 @@ import AVFoundation
             
             guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
                   let input = try? AVCaptureDeviceInput(device: device),
-                  self.session.canAddInput(input) else { return }
+                  self.session.canAddInput(input) else {
+                //Add error management
+                return
+            }
             
             self.session.addInput(input)
             
@@ -77,7 +80,7 @@ import AVFoundation
                 let image = try await cameraProcessor.startCapture(from: photoOutput, using: settings)
                 viewState = .captured(image)
             } catch let error {
-                print(error.localizedDescription)
+                //viewState = .error(error)
             }
         }
     }
@@ -85,5 +88,21 @@ import AVFoundation
     @MainActor
     func retakePhoto() {
         viewState = .preview
+    }
+    
+    @MainActor
+    func closeCamera() {
+        viewState = .closed
+    }
+    
+    @MainActor
+    func convertToBase64(image: UIImage) {
+        guard let imageData = image.jpegData(compressionQuality: 0.8) else {
+            viewState = .error(CameraError.failedToGetJpegData)
+            return
+        }
+
+        let base64 = imageData.base64EncodedString()
+        viewState = .analyze(base64)
     }
 }

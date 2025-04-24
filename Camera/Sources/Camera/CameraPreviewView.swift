@@ -9,12 +9,10 @@ import SwiftUI
 import UI
 
 public struct CameraPreviewView: View {
-    @Binding private var isCameraShown: Bool
-    @Binding private var manager: CameraManager
+    private let manager: CameraManager
     
-    public init(isCameraShown: Binding<Bool>, manager: Binding<CameraManager>) {
-        self._isCameraShown = isCameraShown
-        self._manager = manager
+    public init(manager: CameraManager) {
+        self.manager = manager
     }
     
     public var body: some View {
@@ -27,10 +25,7 @@ public struct CameraPreviewView: View {
                     content: OPCameraNavigationBarContent(
                         leftImage: "xmark",
                         leftAccessibilityLabel: "close",
-                        leftAction: {
-                            stopCamera()
-                            dismissCamera()
-                        },
+                        leftAction: { stopCamera() },
                         title: LocalizedStringKey(stringLiteral: "camera.title"),
                         rightImage: getFlashIcon(),
                         rightAccessibilityLabel: "flash",
@@ -63,9 +58,5 @@ public struct CameraPreviewView: View {
     
     private func stopCamera() {
         manager.stop()
-    }
-    
-    private func dismissCamera() {
-        isCameraShown = false
     }
 }
