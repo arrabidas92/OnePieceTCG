@@ -10,9 +10,11 @@ import UI
 
 public struct CameraPreviewView: View {
     private let manager: CameraManager
+    private let dismissCamera: () -> Void
     
-    public init(manager: CameraManager) {
+    public init(manager: CameraManager, dismissCamera: @escaping () -> Void) {
         self.manager = manager
+        self.dismissCamera = dismissCamera
     }
     
     public var body: some View {
@@ -58,5 +60,6 @@ public struct CameraPreviewView: View {
     
     private func stopCamera() {
         manager.stop()
+        dismissCamera()
     }
 }

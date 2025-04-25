@@ -29,7 +29,14 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $isCameraShown) {
-            CameraView(isCameraShown: $isCameraShown)
+            CameraView { result in
+                switch result {
+                case .success(let imageData):
+                    print("imageData=\(imageData)")
+                case .failure(let cameraError):
+                    print("cameraError=\(cameraError)")
+                }
+            }
         }
     }
 }

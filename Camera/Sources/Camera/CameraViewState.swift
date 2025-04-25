@@ -10,7 +10,4 @@ import UIKit
 public enum CameraViewState {
     case preview
     case captured(UIImage)
-    case analyze(String)
-    case error(CameraError)
-    case closed
 }

@@ -92,17 +92,17 @@ import AVFoundation
     
     @MainActor
     func closeCamera() {
-        viewState = .closed
+        
     }
     
     @MainActor
     func convertToBase64(image: UIImage) {
-        guard let imageData = image.jpegData(compressionQuality: 0.8) else {
-            viewState = .error(CameraError.failedToGetJpegData)
-            return
-        }
-
-        let base64 = imageData.base64EncodedString()
-        viewState = .analyze(base64)
+//        guard let imageData = image.jpegData(compressionQuality: 0.8) else {
+//            viewState = .error(CameraError.failedToGetJpegData)
+//            return
+//        }
+//
+//        let base64 = imageData.base64EncodedString()
+//        viewState = .analyze(base64)
     }
 }

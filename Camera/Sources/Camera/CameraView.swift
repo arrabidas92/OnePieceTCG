@@ -12,12 +12,15 @@ import UI
 //TODO: Send captured image to chat gpt to extract infos about the card captured
 //TODO: Once got the result chat gpt then give price estimation and call user to fulfille which version of the card is it: v1, v2 ...and also the condition of the card if possible
 
+public typealias CameraResult = (Result<String, CameraError>) -> Void
+
 public struct CameraView: View {
-    @Binding private var isCameraShown: Bool
+    @Environment(\.dismiss) var dismiss
     @State private var manager: CameraManager
+    private let result: CameraResult
     
-    public init(isCameraShown: Binding<Bool>) {
-        self._isCameraShown = isCameraShown
+    public init(result: @escaping CameraResult) {
+        self.result = result
         self._manager = State(
             initialValue: CameraManager(flashMode: .off)
         )
@@ -26,22 +29,12 @@ public struct CameraView: View {
     public var body: some View {
         switch manager.viewState {
         case .preview:
-            CameraPreviewView(manager: manager)
+            CameraPreviewView(manager: manager) { dismiss() }
         case .captured(let image):
             CameraCapturedView(
                 manager: manager,
                 image: image
             )
-        case .analyze(let imageData):
-            //to implement
-            EmptyView()
-        case .error(let error):
-            //to implement
-            EmptyView()
-            
-        case .closed:
-            EmptyView()
-            //isCameraShown = false
         }
     }
 }
