@@ -8,16 +8,21 @@
 import SwiftUI
 import UI
 
+public typealias CameraImageDataResult = (String) -> Void
+
 public struct CameraCapturedView: View {
     private let manager: CameraManager
     private let image: UIImage
+    private let imageDataResult: CameraImageDataResult
     
     public init(
         manager: CameraManager,
-        image: UIImage
+        image: UIImage,
+        imageDataResult: @escaping CameraImageDataResult
     ) {
         self.manager = manager
         self.image = image
+        self.imageDataResult = imageDataResult
     }
     
     public var body: some View {
@@ -36,11 +41,21 @@ public struct CameraCapturedView: View {
                     title: LocalizedStringKey(stringLiteral: "camera.confirm.capture"),
                     rightImage: "save",
                     rightAccessibilityLabel: "save",
-                    rightAction: { manager.convertToBase64(image: image) }
+                    rightAction: { getImageData(from: image) }
                 ),
                 style: OPCameraCapturedNavigationBarStyle()
             )
         }
         .onAppear { manager.stop() }
+    }
+    
+    private func getImageData(from image: UIImage) {
+        guard let imageData = image.jpegData(compressionQuality: 0.8) else {
+            manager.viewState = .error(CameraError.failedToGetJpegData)
+            return
+        }
+        
+        let base64 = imageData.base64EncodedString()
+        imageDataResult(base64)
     }
 }

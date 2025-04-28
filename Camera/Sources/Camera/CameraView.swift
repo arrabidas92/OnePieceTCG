@@ -31,10 +31,13 @@ public struct CameraView: View {
         case .preview:
             CameraPreviewView(manager: manager) { dismiss() }
         case .captured(let image):
-            CameraCapturedView(
-                manager: manager,
-                image: image
-            )
+            CameraCapturedView(manager: manager, image: image) {
+                print("imageData=\($0)")
+                dismiss()
+            }
+        case .error(let error):
+            //TO IMPLEMENT ERROR VIEW
+            EmptyView()
         }
     }
 }
